@@ -1,0 +1,37 @@
+<div style="display: flex; flex-direction: column; width: 100%; justify-content: space-around; align-items: center; background-color: lightsteelblue; min-height: 99vh; overflow-x:hidden;">
+    <figure style="display: flex; height: 30vh;"><img style="height: 90%; width: auto;" src="https://yoprofesor.org/wp-content/uploads/2018/03/Prop%C3%B3sito-de-una-pregunta..jpg" alt="Ico"></figure>
+
+    <a href="/" style="-webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+  text-shadow: 3px 2px 1px #0234ff;
+    -webkit-box-shadow: 6px 5px 24px #666666;
+    -moz-box-shadow: 6px 5px 24px #666666;
+    box-shadow: 6px 5px 24px #666666;
+  font-family: Arial;
+    color: #fafafa;
+    font-size: 27px;
+    padding: 19px;
+    text-decoration: none;">Ir a menu</a>
+    <h1>{{ question.question_text }}</h1>
+
+<ul style="background-color: aquamarine; padding: 3vh;">
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} = {{ choice.votes }} voto{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' question.id %}" style="-webkit-border-radius: 28;
+-moz-border-radius: 28;
+border-radius: 28px;
+text-shadow: 3px 2px 1px #0234ff;
+-webkit-box-shadow: 6px 5px 24px #666666;
+-moz-box-shadow: 6px 5px 24px #666666;
+box-shadow: 6px 5px 24px #666666;
+font-family: Arial;
+color: #fafafa;
+font-size: 27px;
+padding: 19px;
+text-decoration: none;">Votar Nuevamente</a>
+
+</div>

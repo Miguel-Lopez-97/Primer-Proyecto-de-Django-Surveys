@@ -1,5 +1,20 @@
-<form action="{% url 'polls:vote' question.id %}" method="post">
+<div style="display: flex; flex-direction: column; width: 100%; justify-content: space-around; align-items: center; background-color: lightsteelblue; min-height: 99vh; overflow-x:hidden;">
+    <figure style="display: flex; height: 30vh;"><img style="height: 90%; width: auto;" src="https://yoprofesor.org/wp-content/uploads/2018/03/Prop%C3%B3sito-de-una-pregunta..jpg" alt="Ico"></figure>
+    <a href="/" style="-webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+  text-shadow: 3px 2px 1px #0234ff;
+    -webkit-box-shadow: 6px 5px 24px #666666;
+    -moz-box-shadow: 6px 5px 24px #666666;
+    box-shadow: 6px 5px 24px #666666;
+  font-family: Arial;
+    color: #fafafa;
+    font-size: 27px;
+    padding: 19px;
+    text-decoration: none;">Ir a menu</a>
+    <form action="{% url 'polls:vote' question.id %}" method="post" style="display: flex; flex-direction: column; width: 60vw; align-items: center;">
     {% csrf_token %}
+    
     <fieldset>
         <legend><h1>{{ question.question_text }}</h1></legend>
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -8,5 +23,17 @@
             <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
         {% endfor %}
     </fieldset>
-    <input type="submit" value="Vote">
+    <input style="-webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+  text-shadow: 3px 2px 1px #0234ff;
+    -webkit-box-shadow: 6px 5px 24px #666666;
+    -moz-box-shadow: 6px 5px 24px #666666;
+    box-shadow: 6px 5px 24px #666666;
+  font-family: Arial;
+    color: #fafafa;
+    font-size: 27px;
+    padding: 19px;
+    text-decoration: none;" type="submit" value="Votar">
     </form>
+</div>
