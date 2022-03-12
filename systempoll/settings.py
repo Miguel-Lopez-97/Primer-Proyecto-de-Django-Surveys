@@ -68,8 +68,12 @@ WSGI_APPLICATION = 'systempoll.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.pg2',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'HOST': 'ec2-34-231-183-74.compute-1.amazonaws.com',
+        'USER':'gwgqbknkhohovn',
+        'PASSWORD':'84c471355df9f09060241105631f1b6fc75435d45aa7c02bc77bc36da82e572e',
+        'PORT':5432
     }
 }
 
