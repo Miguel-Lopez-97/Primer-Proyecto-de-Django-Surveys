@@ -15,9 +15,9 @@ SECRET_KEY = 'django-insecure-kfu!b3k$v@!rp)=o_y0x9atv$$pc5^j)xs=_vp^k6y(ss_bp2x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [‘https://djangopollseducamas.herokuapp.com/',
-‘localhost’,
-‘127.0.0.1’]
+ALLOWED_HOSTS = ['https://djangopollseducamas.herokuapp.com/',
+'localhost',
+'127.0.0.1']
 
 
 # Application definition
