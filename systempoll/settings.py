@@ -1,4 +1,6 @@
 from pathlib import Path
+import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kfu!b3k$v@!rp)=o_y0x9atv$$pc5^j)xs=_vp^k6y(ss_bp2x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -106,6 +108,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_URL = os.path.join(BASE_DIR,'static')
+# Activate Django-Heroku.
+django_heroku.settings(locals())
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
